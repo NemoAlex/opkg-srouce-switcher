@@ -1,0 +1,40 @@
+#!/bin/sh
+
+notes="
+========================
+OPKG SOURCE SWITCHER
+------------------------
+[1] mirrors.ustc.edu.cn/openwrt
+[2] openwrt.bobiji.com
+[3] openwrt.mrx.one
+------------------------
+[r] Reset to default
+[x] Exit
+========================"
+
+echo "$notes"
+
+read -n 1 -p "Your choice: "
+
+echo "
+"
+
+if [[ $REPLY == 1 ]]; then
+  str="mirrors.ustc.edu.cn\/openwrt"
+elif [[ $REPLY == 2 ]]; then
+  str="openwrt.bobiji.com"
+elif [[ $REPLY == 3 ]]; then
+  str="openwrt.mrx.one"
+fi
+
+if [[ $str ]]; then
+  echo "Switch to $str"
+  cp /rom/etc/opkg.conf /etc/opkg.conf
+  sed -i "s/downloads.openwrt.org/$str/g" /etc/opkg.conf
+elif [[ $REPLY = "r" ]]; then
+  cp /rom/etc/opkg.conf /etc/opkg.conf
+elif [[ $REPLY = "x" ]]; then
+  echo "Exit"
+else
+  echo "INVALID INPUT!"
+fi
