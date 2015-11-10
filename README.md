@@ -1,4 +1,4 @@
-# opkg-srouce-switcher
+# OPKG Srouce Switcher
 
 Usage:
 
