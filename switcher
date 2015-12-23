@@ -5,8 +5,9 @@ notes="
 OPKG SOURCE SWITCHER
 ------------------------
 [1] mirrors.ustc.edu.cn/openwrt
-[2] openwrt.bobiji.com
-[3] openwrt.mrx.one
+[2] mirrors.tuna.tsinghua.edu.cn/openwrt
+[3] openwrt.bobiji.com
+[4] openwrt.mrx.one
 ------------------------
 [r] Reset to default
 [x] Exit
@@ -21,9 +22,11 @@ echo "
 
 if [[ $REPLY == 1 ]]; then
   str="mirrors.ustc.edu.cn\/openwrt"
-elif [[ $REPLY == 2 ]]; then
-  str="openwrt.bobiji.com"
+if [[ $REPLY == 2 ]]; then
+  str="mirrors.tuna.tsinghua.edu.cn\/openwrt"
 elif [[ $REPLY == 3 ]]; then
+  str="openwrt.bobiji.com"
+elif [[ $REPLY == 4 ]]; then
   str="openwrt.mrx.one"
 fi
 
