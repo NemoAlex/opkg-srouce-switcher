@@ -22,7 +22,7 @@ echo "
 
 if [[ $REPLY == 1 ]]; then
   str="mirrors.ustc.edu.cn\/openwrt"
-if [[ $REPLY == 2 ]]; then
+elif [[ $REPLY == 2 ]]; then
   str="mirrors.tuna.tsinghua.edu.cn\/openwrt"
 elif [[ $REPLY == 3 ]]; then
   str="openwrt.bobiji.com"
